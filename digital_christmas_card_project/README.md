@@ -11,7 +11,8 @@ This is a small, static web project you can run locally in VS Code.
 ## Replace these files (keep the same filenames)
 Inside `assets/`:
 - `cover.jpg` — cover photo on the front of the card
-- `dwts-logo.png` — DWTS logo shown in the surprise
+- `dwts-logo.jpeg` — DWTS logo shown in the surprise
+- `dwts2.webp` — extra DWTS details image shown in the surprise
 - `dwts-theme.mp3` — music that plays in the surprise
 
 ## Run locally

@@ -1,8 +1,0 @@
-Drop/replace your files in this folder.
-
-Expected filenames (keep the same names so the card keeps working):
-- cover.jpg        (cover photo on the front)
-- dwts-logo.png    (logo image shown in the surprise screen)
-- dwts-theme.mp3   (music that plays in the surprise screen)
-
-You can also add additional images/audio and reference them in index.html / js/app.js.

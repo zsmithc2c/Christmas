@@ -355,6 +355,20 @@ body{
   display:grid;
   gap:10px;
 }
+.details-image{
+  border-radius: 14px;
+  overflow:hidden;
+  background: rgba(0,0,0,.22);
+  border: 1px solid rgba(255,255,255,.12);
+  padding: 8px;
+}
+.details-image img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius: 10px;
+  box-shadow: 0 18px 60px rgba(0,0,0,.45);
+}
 
 .audio-actions{
   display:flex;

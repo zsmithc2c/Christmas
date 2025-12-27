@@ -6,13 +6,15 @@
  *
  * Replace files in /assets:
  * - cover.jpg
- * - dwts-logo.png
+ * - dwts-logo.jpeg
+ * - dwts2.webp
  * - dwts-theme.mp3
  */
 
 const ASSETS = {
   cover: "assets/cover.jpg",
-  logo: "assets/dwts-logo.png",
+  logo: "assets/dwts-logo.jpeg",
+  details: "assets/dwts2.webp",
   music: "assets/dwts-theme.mp3",
 };
 
@@ -21,6 +23,8 @@ const toggleBtn = document.getElementById("toggleBtn");
 const snowBtn = document.getElementById("snowBtn");
 
 const coverPhoto = document.getElementById("coverPhoto");
+const dwtsLogo = document.getElementById("dwtsLogo");
+const dwtsDetails = document.getElementById("dwtsDetails");
 
 const overlay = document.getElementById("overlay");
 const overlayBg = document.getElementById("overlayBg");
@@ -36,6 +40,8 @@ const toast = document.getElementById("toast");
 
 // Set cover photo background
 coverPhoto.style.backgroundImage = `url('${ASSETS.cover}')`;
+if (dwtsLogo) dwtsLogo.src = ASSETS.logo;
+if (dwtsDetails) dwtsDetails.src = ASSETS.details;
 
 function setOpen(isOpen) {
   card.classList.toggle("open", isOpen);
