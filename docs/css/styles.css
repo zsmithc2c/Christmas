@@ -270,6 +270,9 @@ body{
   display:grid;
   grid-template-rows: auto 1fr auto;
   gap: 14px;
+  max-height:100%;
+  overflow-y:auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .inside-header{
@@ -296,6 +299,8 @@ body{
   flex-direction:column;
   gap:12px;
   min-height:0;
+  overflow-y:auto;
+  -webkit-overflow-scrolling: touch;
 }
 .message{
   margin:0;
