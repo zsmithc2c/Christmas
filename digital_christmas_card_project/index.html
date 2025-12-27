@@ -11,81 +11,64 @@
 
   <header class="topbar">
     <div class="brand" aria-label="Digital Christmas card">
-      <span class="dot" aria-hidden="true"></span>
-      <div class="brand-text">
-        <div class="brand-title">Christmas Card</div>
-        <div class="brand-sub">Tap / click to open</div>
-      </div>
     </div>
 
     <div class="header-actions">
-      <button class="btn" id="toggleBtn" type="button">Open / Close</button>
+      <button class="btn" id="toggleBtn" type="button">Open</button>
       <button class="btn" id="snowBtn" type="button">❄️ Snow</button>
     </div>
   </header>
 
   <main class="wrap">
-    <section class="card" id="card" role="button" tabindex="0" aria-label="Open the card">
+    <section class="card" id="card" role="button" tabindex="0" aria-label="Open the card" aria-expanded="false">
       <!-- COVER -->
       <div class="side front" aria-label="Cover">
-        <div class="front-photo" id="coverPhoto" role="img" aria-label="Cover photo"></div>
-        <div class="frame" aria-hidden="true"></div>
+        <div class="front-face">
+          <div class="front-photo" id="coverPhoto" role="img" aria-label="Cover photo"></div>
+          <div class="frame" aria-hidden="true"></div>
 
-        <div class="front-content">
-          <div class="badge">
-            <span class="spark" aria-hidden="true"></span>
-            <span>For Abby</span>
-          </div>
+          <div class="front-content">
+            <div class="cover-title">
+              <h1>Merry Christmas</h1>
+              <h2>Abby</h2>
+            </div>
 
-          <div class="cover-title">
-            <h1>Merry Christmas</h1>
-            <h2>Abby</h2>
-          </div>
-
-          <div class="tap">
-            <div class="tap-emoji" aria-hidden="true">🎄</div>
-            <div>
-              <div class="tap-strong">Tap to open</div>
-              <div class="tap-sub">There’s a surprise inside</div>
+            <div class="tap">
+              <div class="tap-emoji" aria-hidden="true">🎄</div>
+              <div>
+                <div class="tap-strong">Tap to open</div>
+              </div>
             </div>
           </div>
         </div>
+
+        <div class="front-back" aria-hidden="true"></div>
       </div>
 
       <!-- INSIDE -->
       <div class="side inside" aria-label="Inside">
         <div class="inside-content">
           <div class="inside-header">
-            <div>
-              <h3>Your Christmas Message</h3>
-              <p class="muted">Placeholder for now — replace this text with your real message.</p>
-            </div>
-            <div class="muted">— ❤️</div>
+            <h3>Merry Christmas, Pretty</h3>
           </div>
 
           <div class="paper" role="region" aria-label="Message">
-            <p class="message" id="messageText">
-Merry Christmas Abby!
+            <p class="message" id="messageText">The past few months have been such a blessing. We have experienced some difficult times, but through them we have grown closer and are coming out stronger than ever. With all of the progress we have made, it has been wonderful to begin to celebrate and make new memories together. 
+            
+I'm excited to keep dancing through 2026 with you as my partner </p>
 
-[placeholder]
-This is where your full message will go. 🎁✨
-            </p>
+            <div class="signature">Love, Zac</div>
+
+
 
             <div class="inside-actions">
               <button class="btn primary" id="revealBtn" type="button">Reveal surprise</button>
             </div>
-          </div>
-
-          <div class="inside-footer">
-            <div class="muted">Tip: press <b>Esc</b> to close the surprise.</div>
+            
           </div>
         </div>
       </div>
     </section>
-
-    <p class="hint muted">
-      If music doesn’t start automatically, tap <b>Play</b> in the surprise (some browsers block autoplay).
-    </p>
   </main>
 
   <!-- Surprise overlay (third display) -->
@@ -100,24 +83,20 @@ This is where your full message will go. 🎁✨
         </div>
 
         <div class="panel-body">
+          <div class="big-line top-line">We are going to dancing with the stars live! 🪩</div>
+
           <div class="logo-wrap">
             <img id="dwtsLogo" src="assets/dwts-logo.jpeg" alt="Dancing with the Stars logo" />
           </div>
 
-          <div class="big-line">We are <span>going</span>! 🪩</div>
-
           <div class="details">
-            <div><b>Next:</b> add date/time details here.</div>
-            <div><b>Music:</b> DWTS theme plays when this opens.</div>
+            <div><b>Date:</b> January 31st</div>
+            <div><b>Location:</b> Mohegan Sun Arena</div>
+
+            <div class="details-heading">Details:</div>
 
             <div class="details-image">
               <img id="dwtsDetails" src="assets/dwts2.webp" alt="Dancing with the Stars details" loading="lazy" />
-            </div>
-
-            <div class="audio-actions">
-              <button class="btn primary" id="playBtn" type="button">Play</button>
-              <button class="btn" id="pauseBtn" type="button">Pause</button>
-              <button class="btn" id="muteBtn" type="button">Mute</button>
             </div>
           </div>
         </div>

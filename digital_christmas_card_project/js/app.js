@@ -32,9 +32,6 @@ const revealBtn = document.getElementById("revealBtn");
 const closeBtn = document.getElementById("closeBtn");
 
 const audioEl = document.getElementById("dwtsAudio");
-const playBtn = document.getElementById("playBtn");
-const pauseBtn = document.getElementById("pauseBtn");
-const muteBtn = document.getElementById("muteBtn");
 
 const toast = document.getElementById("toast");
 
@@ -45,6 +42,9 @@ if (dwtsDetails) dwtsDetails.src = ASSETS.details;
 
 function setOpen(isOpen) {
   card.classList.toggle("open", isOpen);
+  card.setAttribute("aria-expanded", String(isOpen));
+  toggleBtn.textContent = isOpen ? "Close" : "Open";
+  toggleBtn.setAttribute("aria-pressed", String(isOpen));
 }
 
 function toggleOpen() {
@@ -55,6 +55,7 @@ function toggleOpen() {
 card.addEventListener("click", (e) => {
   // Don't toggle when clicking buttons inside
   if (e.target.closest("button")) return;
+  if (!e.target.closest(".front") && e.target !== card) return;
   toggleOpen();
 });
 
@@ -69,6 +70,8 @@ toggleBtn.addEventListener("click", (e) => {
   e.stopPropagation();
   toggleOpen();
 });
+
+setOpen(false);
 
 // Overlay controls
 function showOverlay() {
@@ -112,29 +115,9 @@ async function tryPlay() {
     const p = audioEl.play();
     if (p && typeof p.then === "function") await p;
   } catch (err) {
-    showToast("Tap Play to start the music.");
+    showToast("Your browser blocked autoplay — tap to allow sound.");
   }
 }
-
-playBtn.addEventListener("click", async () => {
-  try {
-    const p = audioEl.play();
-    if (p && typeof p.then === "function") await p;
-  } catch (err) {
-    showToast("Audio couldn’t play — check assets/dwts-theme.mp3");
-  }
-});
-
-pauseBtn.addEventListener("click", () => {
-  try {
-    audioEl.pause();
-  } catch (_e) {}
-});
-
-muteBtn.addEventListener("click", () => {
-  audioEl.muted = !audioEl.muted;
-  muteBtn.textContent = audioEl.muted ? "Unmute" : "Mute";
-});
 
 // Simple CSS snow generator (no canvas)
 let snowOn = false;
